@@ -1,16 +1,42 @@
 # Sign Language Translator 🤟
 
+> **🚧 Work in Progress** - Currently supports alphabet translation, with sentence translation coming soon!
+
 A real-time American Sign Language (ASL) translator using computer vision and deep learning. This project captures hand gestures through a webcam and translates them into text using a custom-trained Convolutional Neural Network.
+
+## 📋 Current Status & Roadmap
+
+### ✅ Phase 1: Alphabet Translation (Current)
+- **Status**: ✅ **Completed**
+- **Capability**: Individual letter recognition (A-Z)
+- **Accuracy**: 100% test accuracy achieved
+- **Features**: Real-time letter detection with hand segmentation
+
+### 🔄 Phase 2: Sentence Translation (Coming Soon)
+- **Status**: 🚧 **In Development**
+- **Planned Features**:
+  - Word formation from letter sequences
+  - Common word and phrase recognition
+  - Sentence structure understanding
+  - Grammar and context processing
+  - Multi-word gesture recognition
+
+### 🔮 Future Phases
+- **Phase 3**: Advanced conversational ASL
+- **Phase 4**: Bidirectional translation (text-to-sign)
+- **Phase 5**: Mobile app development
 
 ## 🎯 Features
 
-- **Real-time Sign Detection**: Live webcam feed processing for instant gesture recognition
+- **Real-time Letter Recognition**: Live webcam feed processing for instant alphabet gesture recognition
+- **Individual Letter Detection**: Currently supports A-Z alphabet translation (Phase 1)
 - **Hand Detection**: Advanced MediaPipe integration for accurate hand segmentation
 - **Clean Background Processing**: Automatic white background generation for improved accuracy
 - **29 Sign Classes**: Supports A-Z letters plus Space, Delete, and Nothing gestures
-- **High Accuracy**: Achieved **100% test accuracy** on validation data
+- **High Accuracy**: Achieved **100% test accuracy** on alphabet validation data
 - **Modern UI**: Clean, responsive React-based frontend
 - **WebSocket Communication**: Real-time bidirectional communication between frontend and backend
+- **🔄 Future**: Sentence translation capabilities in development
 
 ## 🏆 Model Performance
 
@@ -125,22 +151,37 @@ sign_lang_translator/
 └── README.md                 # This file
 ```
 
-## 🔧 How It Works
+## 🔧 How It Works (Current Implementation)
+
+**Phase 1 - Alphabet Recognition Pipeline:**
 
 1. **Webcam Capture**: Frontend captures live video from user's webcam
 2. **Frame Processing**: Each frame is sent to the backend via WebSocket
 3. **Hand Detection**: MediaPipe detects hand landmarks and creates a mask
 4. **Background Removal**: Hand is isolated on a clean white background
 5. **Preprocessing**: Image is resized to 64x64 and normalized
-6. **Model Inference**: TinyVGG model predicts the sign class
-7. **Real-time Display**: Prediction is sent back and displayed instantly
+6. **Model Inference**: TinyVGG model predicts the letter class
+7. **Real-time Display**: Letter prediction is sent back and displayed instantly
 
-## 🎯 Supported Signs
+**Phase 2 - Planned Sentence Translation Pipeline:**
+- Letter sequence collection and word formation
+- Context analysis and grammar processing
+- Sentence structure recognition
+- Enhanced multi-gesture understanding
 
-The model recognizes 29 different classes:
+## 🎯 Supported Signs (Current Phase)
+
+**Phase 1 - Alphabet Translation:**
+The model currently recognizes 29 different classes for individual letter recognition:
 - **Letters**: A through Z (26 classes)
 - **Actions**: Space, Delete
 - **Neutral**: Nothing (no sign detected)
+
+**Coming in Phase 2 - Sentence Translation:**
+- Word formation from letter sequences
+- Common ASL words and phrases
+- Contextual sentence understanding
+- Grammar processing
 
 ## 🔍 Key Features
 
@@ -207,11 +248,26 @@ TinyVGG(
 
 ## 🤝 Contributing
 
+We welcome contributions to help advance this project from alphabet to sentence translation!
+
+### Current Priorities
+- **Phase 2 Development**: Help implement sentence translation features
+- **Dataset Expansion**: Contribute word and phrase datasets
+- **Model Improvements**: Enhance accuracy for complex gestures
+- **UI/UX**: Improve user interface for sentence display
+
+### How to Contribute
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+### Development Areas
+- **Machine Learning**: Model architecture improvements for sentence understanding
+- **Data Science**: Dataset collection and preprocessing for words/phrases
+- **Frontend**: Enhanced UI for sentence display and interaction
+- **Backend**: Improved processing pipeline for complex translations
 
 ## 📝 License
 
@@ -230,4 +286,6 @@ For questions, suggestions, or issues, please open an issue on GitHub or contact
 
 ---
 
+**🚧 Currently in Phase 1: Alphabet Translation Complete**  
+**🔄 Phase 2: Sentence Translation Coming Soon**  
 **Built with ❤️ for the deaf and hard-of-hearing community**
